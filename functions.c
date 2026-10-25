@@ -2,37 +2,25 @@
 #include <math.h>
 
 double F23(double x) {
-  return 3 * x - 4 * log(x) - 5;
+  return 3.0 * x - 4.0 * log(x) - 5.0;
 }
 
 double Fx23(double x) {
-  return (4 * log(x) + 5) / 3;
-}
-
-double f23(double x) {
-  return 3 - 4 / x;
+  return (4.0 * log(x) + 5.0) / 3.0;
 }
 
 double F24(double x) {
-  return cos(2 / x) - 2 * sin(1 / x) + 1 / x;
+  return cos(2.0 / x) - 2.0 * sin(1.0 / x) + 1.0 / x;
 }
 
 double Fx24(double x) {
-  return 1 / (2 * sin(1 / x) - cos(2 / x));
-}
-
-double f24(double x) {
-  return (1 / (x * x)) * (2 * sin(2 / x) + cos(1 / x) - 1);
+  return x - (cos(2.0 / x) - 2.0 * sin(1.0 / x) + 1.0 / x);
 }
 
 double F25(double x) {
-  return sqrt(1 - 0.4 * x * x) - asin(x);
+  return sqrt(1.0 - 0.4 * x * x) - asin(x);
 }
 
 double Fx25(double x) {
-  return sqrt(1 - 0.4 * x * x) - asin(x) + x;
-}
-
-double f25(double x) {
-  return (-0.8 * x) / (2 * sqrt(1 - 0.4 * x * x)) - 1 / sqrt(1 - x * x);
+  return sqrt(1.0 - 0.4 * x * x) - asin(x) + x;
 }

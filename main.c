@@ -11,7 +11,7 @@ int main(void) {
   printf(" (%d iteration(s).)\n", cnt);
   printf("Iteration method: %f", iteration_method(2, 4, Fx23, &cnt));
   printf(" (%d iteration(s).)\n", cnt);
-  printf("Newton method: %f", newton_method(2, 4, F23, f23, &cnt));
+  printf("Newton method: %f", newton_method(2, 4, F23, &cnt));
   printf(" (%d iteration(s).)\n", cnt);
 
   printf("\n");
@@ -20,7 +20,7 @@ int main(void) {
   printf(" (%d iteration(s).)\n", cnt);  
   printf("Iteration method: %f", iteration_method(1, 2, Fx24, &cnt));
   printf(" (%d iteration(s).)\n", cnt);
-  printf("Newton method: %f", newton_method(1, 2, F24, f24, &cnt));
+  printf("Newton method: %f", newton_method(1, 2, F24, &cnt));
   printf(" (%d iteration(s).)\n", cnt);
 
   printf("\n");
@@ -29,7 +29,7 @@ int main(void) {
   printf(" (%d iteration(s).)\n", cnt);
   printf("Iteration method: %f", iteration_method(0, 1, Fx25, &cnt));
   printf(" (%d iteration(s).)\n", cnt);
-  printf("Newton method: %f", newton_method(0, 1, F25, f25, &cnt));
+  printf("Newton method: %f", newton_method(0, 1, F25, &cnt));
   printf(" (%d iteration(s).)\n", cnt);
   return 0;
 }
