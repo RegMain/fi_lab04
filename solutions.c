@@ -3,7 +3,6 @@
 #include <stdint.h>
 
 const double EPS = 1e-10;
-const int32_t MAX_ITERATIONS = 10000;
 
 double df(double (*f)(double), double x) {
   return (f(x + EPS) - f(x - EPS)) / (2 * EPS);
@@ -43,9 +42,6 @@ double iteration_method(double l, double r, double (*f)(double), uint32_t *cnt) 
     if (fabs(df(f, x) - 1) < EPS || df(f, x) - 1 > EPS) {
       return -INFINITY;
     }
-    if (*cnt > MAX_ITERATIONS) {
-      return -INFINITY;
-    }
   } while (fabs(x - prev_x) > EPS);
 
   if (fabs(x - f(x)) < EPS && ((x - l) > EPS || fabs(x - l) < EPS) && ((r - x) > EPS || fabs(x - r) < EPS)) {
@@ -76,9 +72,6 @@ double newton_method(double l, double r, double (*f)(double), uint32_t *cnt) {
       return -INFINITY;
     }
     if (fabs(f_val * df2_val) - df_val * df_val > EPS) {
-      return -INFINITY;
-    }
-    if (*cnt > MAX_ITERATIONS) {
       return -INFINITY;
     }
     prev_x = x;
