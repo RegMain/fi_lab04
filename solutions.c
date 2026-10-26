@@ -44,10 +44,10 @@ double iteration_method(double l, double r, double (*f)(double), uint32_t *cnt) 
       return -INFINITY;
     }
     if (*cnt > MAX_ITERATIONS) {
-      return - INFINITY;
+      return -INFINITY;
     }
   } while (fabs(x - prev_x) > EPS);
-  
+
   if (fabs(x - f(x)) < EPS && ((x - l) > EPS || fabs(x - l) < EPS) && ((r - x) > EPS || fabs(x - r) < EPS)) {
     return x;
   } else {
@@ -84,7 +84,7 @@ double newton_method(double l, double r, double (*f)(double), uint32_t *cnt) {
     prev_x = x;
     x = x - f_val/df_val;
   } while (fabs(x - prev_x) > EPS);
-  
+
   if (fabs(f(x)) < EPS && ((x - l) > EPS || fabs(x - l) < EPS) && ((r - x) > EPS || fabs(x - r) < EPS)) {
     return x;
   } else {
